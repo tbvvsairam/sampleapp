@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag sairam9999/django_web_app-web:latest
+      run: docker build . --file Dockerfile --tag django_web_app-web:latest
     - name: Push the Docker image
       run : docker login -u sairam9999 -p ${{secrets.DOCKER_TOKEN}} && docker push sairam9999/django_web_app-web:latest
