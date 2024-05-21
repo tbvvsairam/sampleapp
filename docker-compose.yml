@@ -1,0 +1,19 @@
+version: '3'
+#import { Component, OnInit } from '@angular/core';
+#import { Router } from '@angular/router';
+#import { AuthService } from './auth.service';
+#@Component({ selector: 'app-root', templateUrl:    'login.component.html' }) export class LoginComponent implements OnInit{  private"""
+services:
+  web:
+    build: .
+    command: python manage.py runserver
+ 
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: application:django_web_app
+    container_name: django_web_app
+    command: python manage.py runserver 0.0.0.0:8000
